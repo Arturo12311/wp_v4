@@ -27,7 +27,7 @@ class Msg:
         """
         self.nb, self.rb = self.split_null(ba)
         if self.is_null(self.nb):
-            self.op = None; self.name = None; self.struct = None; self.msg = None; self.rb = None
+            self.op = None; self.name = None; self.struct = None; self.msg = None; self.rb = ba[1:]
         else:
             self.hb, self.rb = self.split_header(self.rb)
             self.op = self.read_header(self.hb)
@@ -54,6 +54,7 @@ class Msg:
             struct = structs[name[:-1]]
         else:
             struct = structs[name]
+        print(struct)
         ps = {}
         for k, v in struct.items():
             pf, rb = self.parse(v, rb)
@@ -82,7 +83,7 @@ class Msg:
             pm = {}
             hb, rb = self.split_header(rb)
             l = self.read_header(hb)
-            t1, t2 = x.items()
+            t1, t2 = next(iter(x.items()))
             for _ in range(0, l):
                 v1, rb = self.parse(t1, rb)
                 v2, rb = self.parse(t2, rb)
@@ -108,6 +109,8 @@ class Msg:
         if x == "s":
             v, rb = self.ps(rb)
             return v, rb
+        elif re.match(r"ETzCharacterStateType|ETzConnectionStatusType|ETzMountInteractionStateType", x):
+            fs = "<I"
         elif re.match("ETz.*", x):
             fs = "<B"
         else:
@@ -148,14 +151,23 @@ def print_dict(name, dict):
 
 """RUN"""
 def main():
-    for _, v in log.items():
+    output = {}
+    for k, v in log.items():
+        if k == "PlayerInitializeInfoNotify" or k == "PlayerPrivateStatsInfoSynchronizeNotify" or k == "FieldEnterCompleteResponse":
+            continue
+
 
         # read message
         ba = convert_to_bytearray(v)
-        print(list(ba)) #debug
         msg = Msg(ba)
 
-        # print message
+        # store message data
+        output[msg.name] = {
+            "msg": msg.msg,
+            "remainder": list(msg.rb or [])
+        }
+
+        # print debugging
         print("\n\n")
         print("-" * 100)
         print("-" * 100)
@@ -169,4 +181,9 @@ def main():
         print("---")
         print(f"remaining bytes: {list(msg.rb or [])}")
         print("---")
+
+            
+    # Write all output to JSON file at once
+    with open('output.json', 'w') as f:
+        json.dump(output, f, indent=2)
 main()

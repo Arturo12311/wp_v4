@@ -1,8 +1,4 @@
 {
-    "Vuid": {
-        "Cuid": "I",
-        "Guid": "Q"
-    },
     "TlsLikeEncryptClientHello": {
         "field0": ["B"]
     },
@@ -285,7 +281,7 @@
         "ProtectedDamage": "i"
     },
     "QuestAcceptRequest": {
-        "QuestVuid": "FTzVuid",
+        "QuestVuid": "IQ",
         "FavorNpcGuid": "q"
     },
     "CovenantBattalionExpeditionDeployStopLivingTotemRequest": {},
@@ -644,7 +640,7 @@
         "ResultCode": "ETzResultCodeType"
     },
     "QuestAcceptNotify": {
-        "QuestVuid": "FTzVuid",
+        "QuestVuid": "IQ",
         "CurrencyContainerUpdateInfo": "FTzPlayerCurrencyContainerUpdateInfo0",
         "CombinedInventoryUpdateInfo": "FTzCombinedInventoryUpdateInfo0",
         "StartByItem": "?",
@@ -783,7 +779,7 @@
         "CharacterGuid": "q"
     },
     "CovenantDisplayInfo": {
-        "CovenantVuid": "FTzVuid",
+        "CovenantVuid": "IQ",
         "CovenantName": "s",
         "CovenantEmblemInfo": "FTzCovenantEmblemInfo0"
     },
@@ -818,7 +814,7 @@
     },
     "RealmCovenantId": {
         "RealmCuid": "I",
-        "CovenantVuid": "FTzVuid"
+        "CovenantVuid": "IQ"
     },
     "CheatClearCollectionByCollectionCategoryCuidFailResponse": {
         "ResultCode": "ETzResultCodeType"
@@ -1177,7 +1173,7 @@
     "StrongholdBattleJoinedCovenantInfo": {
         "BattalionGuid": "q",
         "DeploymentKind": "ETzStrongholdBattleDeploymentKindType",
-        "CovenantVuid": "FTzVuid",
+        "CovenantVuid": "IQ",
         "CovenantName": "s",
         "CovenantEmblemInfo": "FTzCovenantEmblemInfo0"
     },
@@ -2626,7 +2622,7 @@
         "NewCovenantMemberRoleName": "s"
     },
     "CheatAccomplishQuestRequest": {
-        "QuestVuid": "FTzVuid",
+        "QuestVuid": "IQ",
         "QuestMissionSequence": "i",
         "ReceiveReward": "?"
     },
@@ -3239,7 +3235,7 @@
         "CombatOptionInfo": "FTzCombatOptionInfo0"
     },
     "QuestCancelNotify": {
-        "QuestVuid": "FTzVuid",
+        "QuestVuid": "IQ",
         "CombinedInventoryUpdateInfo": "FTzCombinedInventoryUpdateInfo0",
         "QuestCancelReasonKind": "ETzQuestCancelReasonKindType"
     },
@@ -3407,7 +3403,7 @@
         "PlayerSkillSlotInfo": "FTzPlayerSkillSlotInfo0"
     },
     "CheatTeleportToQuestMissionLocationRequest": {
-        "QuestVuid": "FTzVuid",
+        "QuestVuid": "IQ",
         "QuestMissionSequence": "i"
     },
     "CheatResetDiscoveredSelfieDoodadSpawnersResponse": {
@@ -3528,7 +3524,7 @@
         ]
     },
     "StrongholdBattleGroupInfo": {
-        "CovenantVuid": "FTzVuid",
+        "CovenantVuid": "IQ",
         "CovenantName": "s",
         "CovenantEmblemInfo": "FTzCovenantEmblemInfo0",
         "CovenantCreateDateTime": "IQ",
@@ -3884,7 +3880,7 @@
     "StrongholdSummaryCovenantInfoNotify": {
         "Channel": "ETzSubscriptionChannelType",
         "Parameter": "?",
-        "OccupyingCovenantVuid": "FTzVuid",
+        "OccupyingCovenantVuid": "IQ",
         "OccupyingCovenantName": "s",
         "OccupyingCovenantLevel": "i",
         "OccupyingCovenantEmblemInfo": "FTzCovenantEmblemInfo0"
@@ -4163,7 +4159,7 @@
         "Cuid": "I",
         "Entity": "ETzEntityType",
         "Guid": "q",
-        "CovenantVuid": "FTzVuid",
+        "CovenantVuid": "IQ",
         "Name": "s",
         "Stance": "ETzStanceType",
         "PartyGuid": "q"
@@ -4240,7 +4236,7 @@
     },
     "StrongholdBattleDefenseGunAttackStartNotify": {},
     "QuestAutomaticallyProceedNotify": {
-        "QuestVuid": "FTzVuid"
+        "QuestVuid": "IQ"
     },
     "AnniversaryStrongholdOccupationRecordQueryResponse": {
         "ResultCode": "ETzResultCodeType",
@@ -4855,7 +4851,7 @@
         "GearSlot": "ETzGearSlotType"
     },
     "QuestMissionProgressInfo": {
-        "QuestMissionVuid": "FTzVuid",
+        "QuestMissionVuid": "IQ",
         "ProgressCount": "q"
     },
     "CheatTerritoryContaminationChangeResponse": {
@@ -4880,7 +4876,7 @@
         "ResultCode": "ETzResultCodeType"
     },
     "QuestCancelRequest": {
-        "QuestVuid": "FTzVuid"
+        "QuestVuid": "IQ"
     },
     "CheatTeleportToSpawnerResponse": {
         "ResultCode": "ETzResultCodeType",
@@ -5141,7 +5137,7 @@
         "LocationInfo": "FTzLocationInfo0"
     },
     "FavorMissionDatabaseInfo": {
-        "Vuid": "FTzVuid",
+        "Vuid": "IQ",
         "FavorTemplateCuid": "I",
         "TerritoryCuid": "I",
         "FavorAcceptedStrongholdCuid": "I",
@@ -7556,7 +7552,7 @@
         "CurrencyDonationCuid": "I"
     },
     "QuestRewardRequest": {
-        "QuestVuid": "FTzVuid"
+        "QuestVuid": "IQ"
     },
     "CovenantBattalionExpeditionSummaryInfo": {
         "ExpeditionGuid": "q",
@@ -9209,7 +9205,7 @@
     "StrongholdSummaryInitialDataNotify": {
         "Channel": "ETzSubscriptionChannelType",
         "Parameter": "?",
-        "OccupyingCovenantVuid": "FTzVuid",
+        "OccupyingCovenantVuid": "IQ",
         "OccupyingCovenantName": "s",
         "OccupyingCovenantLevel": "i",
         "OccupyingCovenantEmblemInfo": "FTzCovenantEmblemInfo0",
@@ -9379,8 +9375,8 @@
     },
     "CheatExpeditionLivingTotemTeleportToPlayerRequest": {},
     "FavorMissionInfo": {
-        "Vuid": "FTzVuid",
-        "FavorVuid": "FTzVuid",
+        "Vuid": "IQ",
+        "FavorVuid": "IQ",
         "HuntingSiteCuidList": [
         "I"
         ],
@@ -10101,7 +10097,7 @@
     },
     "TerritoryInfo": {
         "Cuid": "I",
-        "OccupyingCovenantVuid": "FTzVuid",
+        "OccupyingCovenantVuid": "IQ",
         "OccupyingCovenantName": "s",
         "OccupyingCovenantLevel": "i",
         "TerritoryEmblemInfo": "FTzCovenantEmblemInfo0",
@@ -10500,7 +10496,7 @@
     },
     "CheatAcceptQuestResponse": {
         "ResultCode": "ETzResultCodeType",
-        "QuestVuid": "FTzVuid",
+        "QuestVuid": "IQ",
         "CombinedInventoryUpdateInfo": "FTzCombinedInventoryUpdateInfo0",
         "QuestsInfo": "FTzQuestsInfo0"
     },
@@ -10696,12 +10692,12 @@
     },
     "QuestRewardResponse": {
         "ResultCode": "ETzResultCodeType",
-        "QuestVuid": "FTzVuid",
+        "QuestVuid": "IQ",
         "ReceivedRewardInfo": "FTzReceivedRewardInfo0",
         "HiddenRewardInfo": "FTzRewardInfo0"
     },
     "FavorDatabaseInfo": {
-        "Vuid": "FTzVuid",
+        "Vuid": "IQ",
         "FavorTemplateCuid": "I",
         "TerritoryCuid": "I",
         "FavorAcceptedStrongholdCuid": "I",
@@ -10894,7 +10890,7 @@
         "Cuid": "I",
         "Entity": "ETzEntityType",
         "Guid": "q",
-        "CovenantVuid": "FTzVuid"
+        "CovenantVuid": "IQ"
     },
     "NxLogBaseParameterInfo": {
         "ActionId": "I2H8B",
@@ -11066,7 +11062,7 @@
     },
     "QuestAcceptFailResponse": {
         "ResultCode": "ETzResultCodeType",
-        "QuestVuid": "FTzVuid"
+        "QuestVuid": "IQ"
     },
     "PushNotificationOptionInfo": {
         "Cuid": "I",
@@ -11135,7 +11131,7 @@
         "ResultCode": "ETzResultCodeType"
     },
     "InstanceFieldDisallowedInPvpNotify": {
-        "CausedAutomaticallyProceedingQuestVuid": "FTzVuid"
+        "CausedAutomaticallyProceedingQuestVuid": "IQ"
     },
     "SchemaTable": {
         "SchemaId": "i",
@@ -11239,7 +11235,7 @@
     },
     "StrongholdBattleJoinedCovenantHistoryInfo": {
         "DeploymentKind": "ETzStrongholdBattleDeploymentKindType",
-        "CovenantVuid": "FTzVuid",
+        "CovenantVuid": "IQ",
         "CovenantName": "s",
         "JoinedDateTime": "IQ",
         "IsDismissed": "?",
@@ -11327,7 +11323,7 @@
         "IsSeekHidingAttackTargetState": "?"
     },
     "StrongholdBattleAttackGroupInfo": {
-        "CovenantVuid": "FTzVuid",
+        "CovenantVuid": "IQ",
         "CovenantName": "s",
         "CovenantEmblemInfo": "FTzCovenantEmblemInfo0",
         "CovenantCreateDateTime": "IQ",
@@ -11354,7 +11350,7 @@
     },
     "StrongholdOccupancyInfo": {
         "Cuid": "I",
-        "CovenantVuid": "FTzVuid",
+        "CovenantVuid": "IQ",
         "CovenantName": "s",
         "CovenantLevel": "i",
         "CovenantEmblemInfo": "FTzCovenantEmblemInfo0"
@@ -11651,7 +11647,7 @@
         "EndReason": "ETzServerDrivenPlayEndReasonType"
     },
     "StrongholdBattleDefenseGroupInfo": {
-        "CovenantVuid": "FTzVuid",
+        "CovenantVuid": "IQ",
         "CovenantName": "s",
         "CovenantEmblemInfo": "FTzCovenantEmblemInfo0",
         "CovenantCreateDateTime": "IQ",
@@ -12599,7 +12595,7 @@
         "SpawnerCuid": "I"
     },
     "FavorInfo": {
-        "Vuid": "FTzVuid",
+        "Vuid": "IQ",
         "FavorTemplateCuid": "I",
         "TerritoryCuid": "I",
         "FavorAcceptedStrongholdCuid": "I",
@@ -13764,7 +13760,7 @@
         "ChangeSlotCount": "i"
     },
     "CheatAcceptQuestRequest": {
-        "QuestVuid": "FTzVuid",
+        "QuestVuid": "IQ",
         "TeleportToQuestMissionLocation": "?",
         "ReceivePrecedingQuestReward": "?"
     },
