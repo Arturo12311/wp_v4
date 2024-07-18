@@ -10793,7 +10793,11 @@
         }
     },
     "TlsLikeEncryptPremasterSecret": {
-        "PremasterSecret": ["array", 1]
+        "PremasterSecret": {
+            "type": "vector",
+            "value": "unsigned_char",
+            "nullable": false
+        }
     },
     "CovenantDiplomacyRejectAllianceResponse": {
         "Base": {
@@ -13519,9 +13523,7 @@
             "nullable": true
         }
     },
-    "TlsLikeEncryptClientHello": {
-        "field0": ["array", 4]
-    },
+    "TlsLikeEncryptClientHello": {},
     "CheatTestGearEnchantGradeResponse": {
         "Base": {
             "type": "struct",
@@ -20425,9 +20427,21 @@
         }
     },
     "TlsLikeEncryptServerHello": {
-        "ServerRandom": ["array", 1],
-        "Exponent": ["array", 1],
-        "Modulus": ["array", 1]
+        "ServerRandom": {
+            "type": "vector",
+            "value": "unsigned_char",
+            "nullable": false
+        },
+        "Exponent": {
+            "type": "vector",
+            "value": "unsigned_char",
+            "nullable": false
+        },
+        "Modulus": {
+            "type": "vector",
+            "value": "unsigned_char",
+            "nullable": false
+        }
     },
     "RoadLinkInfo": {
         "DestinationRoadJunctionId": {
@@ -21559,7 +21573,11 @@
         }
     },
     "InfoAuthenticate": {
-        "AuthenticateInfo": ["message"]
+        "AuthenticateInfo": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        }
     },
     "AcceptDiplomacyChatRoomInvitationResponse": {
         "Base": {
@@ -34903,7 +34921,11 @@
         }
     },
     "ProtocolCheckRequest": {
-        "Hash": ["string"]
+        "Hash": {
+            "type": "string",
+            "value": "char",
+            "nullable": false
+        }
     },
     "PartyConfirmRecommendationForInviteeResponse": {
         "Base": {
@@ -41767,8 +41789,16 @@
         }
     },
     "ErServerAuthenticateInfo": {
-        "Base": ["struct", "AuthenticateInfo"],
-        "LocalAreaNetworkAddress": ["string"]
+        "Base": {
+            "type": "struct",
+            "value": "AuthenticateInfo",
+            "nullable": false
+        },
+        "LocalAreaNetworkAddress": {
+            "type": "custom",
+            "value": "FString",
+            "nullable": false
+        }
     },
     "CovenantRubyShopMerchandiseInfoNotify": {
         "Base": {
@@ -42374,11 +42404,31 @@
         }
     },
     "InfoAuthenticateComplete": {
-        "Success": [1],
-        "SessionKey": ["string"],
-        "SessionInitializeInfo": ["message"],
-        "FailureReason": [4],
-        "FailureReasonData": ["message"]
+        "Success": {
+            "type": "bool",
+            "value": null,
+            "nullable": false
+        },
+        "SessionKey": {
+            "type": "string",
+            "value": "char",
+            "nullable": false
+        },
+        "SessionInitializeInfo": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        },
+        "FailureReason": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "FailureReasonData": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        }
     },
     "CheatServerDrivenPlayResupplyRequest": {
         "Base": {
@@ -48575,8 +48625,16 @@
         }
     },
     "ErGameServerAuthenticateInfo": {
-        "Base": ["struct", "ErServerAuthenticateInfo"],
-        "AuthenticateKey": [4]
+        "Base": {
+            "type": "struct",
+            "value": "ErServerAuthenticateInfo",
+            "nullable": false
+        },
+        "AuthenticateKey": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        }
     },
     "NavMeshTileDataResponse": {
         "Base": {

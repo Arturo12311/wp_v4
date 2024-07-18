@@ -1,0 +1,1353 @@
+{
+    "TlsLikeEncryptClientHello": {
+    "field0": [0, "I"]
+    },
+    "TlsLikeEncryptServerHello": {
+        "ServerRandom": [0, "B"],
+        "Exponent": [0, "B"],
+        "Modulus": [0, "B"]
+    },
+    "TlsLikeEncryptPremasterSecret": {
+        "PremasterSecret": [0, "B"]
+    },
+    "TlsLikeEncryptServerCompleted": {},
+    "ProtocolCheckRequest": {
+        "Hash": [0, "c"]
+    },
+    "ProtocolCheckResponse": {},
+    "InfoAuthenticate": {
+        "AuthenticateInfo": ["message"]
+    },
+    "ErGameServerAuthenticateInfo": {
+        "LocalAreaNetworkAddress": [0, "c"],
+        "AuthenticateKey": [1, "I"]
+    },
+    "InfoAuthenticateComplete": {
+        "Success": [1, "B"],
+        "SessionKey": [0, "c"],
+        "SessionInitializeInfo": ["message"],
+        "FailureReason": [1, "I"],
+        "FailureReasonData": ["message"]
+    },
+    "ErGameServerSessionInitializeInfo": {
+        "UtcNow": [[1, "i"], [1, "q"]],
+        "LocationInfo": ["LocationInfo"]
+    },
+    "LocationInfo": {
+        "FieldUid": ["FieldUid"],
+        "Location_cm": [3, "f"],
+        "FacingDirection": [3, "f"]
+    },
+    "FieldUid": {
+        "RegionCuid": [1, "I"],
+        "InstanceFieldCuid": [1, "I"],
+        "InstanceFieldGuid": [1, "I"]
+    },
+    "TozPing": {
+        "Nonce": [1, "i"],
+        "RecentlyProcessedTozMessageIndex": [1, "i"]
+    },
+    "TozPong": {
+        "Nonce": [1, "i"],
+        "ServerUtcNow": [[1, "i"], [1, "q"]],
+        "RecentlyProcessedTozMessageIndex": [1, "i"]
+    },
+    "FieldEnterCompleteRequest": {
+        "NavMeshCrcChecksum": [1, "I"],
+        "CharacterMoveInfo": ["message"]
+    },
+    "PlayerInitializeInfoNotify": {
+        "PlayerInitializeInfo": ["PlayerInitializeInfo"],
+        "CovenantInfo": ["CovenantInfo"],
+        "CovenantBattalionInfos": [0, [1, "Q"], ["CovenantBattalionNotifyInfo"]],
+        "FirstLoginAsPlayerDateTime": [1, "B"],
+        "ReturningUserReturnedDateTime": [1, "B"],
+        "ContentsActivationFlags": [0, "B"]
+    },
+    "CovenantBattalionNotifyInfo": {
+        "CreateDateTime": [[1, "i"], [1, "q"]],
+        "IsNotExposeToBattalionList": [1, "B"]
+    },
+    "SpawnLayerAlreadyActivatedNotify": {
+        "IsPermanentSpawnLayer": [1, "B"],
+        "SpawnLayerCuids": [0, "I"]
+    },
+    "EnvironmentVariablesNotify": {
+        "Variables": [0, [0, "c"], [0, "c"]]
+    },
+    "CovenantHistoryShowArrivalNotify": {
+        "CovenantHistoryInfos": [0, [1, "B"], [0, "CovenantHistoryInfo"]]
+    },
+    "CovenantHistoryInfo": {
+        "Guid": [1, "Q"],
+        "CreateDateTime": [[1, "i"], [1, "q"]]
+    },
+    "PlayerFieldEnterNotify": {
+    },
+    "EntitySpawnNotify": {
+        "EntityInfo": ["message"],
+        "EntitySpawnReason": [1, "B"]
+    },
+    "ConnectionStatusSynchronizeNotify": {
+        "EntityGuid": [1, "Q"],
+        "PlayerGuid": [1, "Q"],
+        "ConnectionStatus": [1, "B"]
+    },
+    "MountInteractionStateNotify": {
+        "DriverGuid": [1, "Q"],
+        "MountInteractionState": [1, "B"],
+        "Info": ["message"]
+    },
+    "SpecialMovePointsSynchronizeNotify": {
+        "EntityGuid": [1, "Q"],
+        "SpecialMovePoints": [1, "i"],
+        "SpecialMovePointsDecreaseAmount_pmsec": [1, "i"],
+        "ServerUtcNow": [[1, "i"], [1, "q"]],
+        "DelayForOthersDuration_msec": [1, "f"]
+    },
+    "InstanceEventStartNotify": {
+        "EventCuid": [1, "I"]
+    },
+    "EntityRemoveNotify": {
+        "EntityGuid": [1, "Q"],
+        "EntityRemoveReason": [1, "B"]
+    },
+    "SpawnLayerDeactivateNotify": {
+        "IsPermanentSpawnLayer": [1, "B"],
+        "SpawnLayerCuid": [1, "I"]
+    },
+    "CharacterMoveNotify": {
+        "CharacterGuid": [1, "Q"],
+        "CharacterMoveInfo": ["message"]
+    },
+    "CharacterStateSynchronizeNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "EntitySynchronizeMessage",
+            "nullable": false
+        },
+        "CharacterState": [1, "B"],
+        "StrongholdBattleResult": [1, "B"],
+        "AffectSourceInfo": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        }
+    },
+    "MailUnreadNotify": {
+        "UnreadCounts": {
+            "type": "map",
+            "value": "<TMap<ETzMailTabType,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<ETzMailTabType,int,false>",
+            "nullable": false
+        }
+    },
+    "InstanceEventCompleteNotify": {
+        "EventCuid": [1, "I"]
+    },
+    "ContentsUnlockInitializeNotify": {
+        "UnusedContentsUnlockKinds": {
+            "type": "map",
+            "value": "<TMap<ETzContentsUnlockKindType,bool,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<ETzContentsUnlockKindType,bool,false>",
+            "nullable": false
+        }
+    },
+    "CharacterPublicStatsInfoSynchronizeNotify": {
+        "EntityGuid": {
+            "type": "basic",
+            "value": "long_long",
+            "nullable": false
+        },
+        "CharacterPublicStatsInfo": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        }
+    },
+    "PlayerPrivateStatsInfoSynchronizeNotify": {
+        "PlayerPrivateStatsInfo": ["PlayerPrivateStatsInfo"]
+    },
+    "PlayerPrivateStatsInfo": {
+        "ExperiencePoints": {
+            "type": "basic",
+            "value": "long_long",
+            "nullable": false
+        },
+        "HealthPointsRegenerationOutOfCombatUnit": {
+            "type": "basic",
+            "value": "long_long",
+            "nullable": false
+        },
+        "HealthPointsRegenerationInCombatUnit": {
+            "type": "basic",
+            "value": "long_long",
+            "nullable": false
+        },
+        "ManaPoints": {
+            "type": "basic",
+            "value": "long_long",
+            "nullable": false
+        },
+        "MaxManaPoints": {
+            "type": "basic",
+            "value": "long_long",
+            "nullable": false
+        },
+        "ManaPointsRegenerationOutOfCombatUnit": {
+            "type": "basic",
+            "value": "long_long",
+            "nullable": false
+        },
+        "ManaPointsRegenerationInCombatUnit": {
+            "type": "basic",
+            "value": "long_long",
+            "nullable": false
+        },
+        "Potential": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "OffensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalMeleeOffensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalRangedOffensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalMagicOffensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "WeaponMinDamage": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "WeaponMaxDamage": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "Hit": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "MeleeHit": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "RangedHit": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "MagicHit": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SkillHit": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "StunHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SilenceHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "BlindHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "OverlayDebuffHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "PierceRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "CriticalRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalWeaponDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalWeaponDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "CriticalDamageIncreaseRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SkillDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalMeleeDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalMeleeOffensivePowerRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalRangedDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalRangedOffensivePowerRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalMagicDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalMagicOffensivePowerRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalFireDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalFireDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalWaterDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalWaterDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalEarthDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalEarthDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalWindDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalWindDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalHolyDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalHolyDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalDarkDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalDarkDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalDivineDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalDivineDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalHumanoidDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalHumanoidDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalElvenDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalElvenDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalEntangledDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalEntangledDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalBeastDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalBeastDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalAbyssalDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalAbyssalDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalSiegeWeaponDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalSiegeWeaponDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalBossDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalBossDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalCriticalDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "PierceDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "DefensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SkillDefensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "Dodge": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "MeleeDodge": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "RangedDodge": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "MagicDodge": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SkillDodge": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "StunResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SilenceResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "BlindResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "UniversalDebuffResistAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "OverlayDebuffResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "OverlayDebuffDecreaseRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "BlockRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "CriticalResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalWeaponDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalWeaponDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "CriticalDamageReduceRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbSkillDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalMeleeDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalMeleeDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalRangedDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalRangedDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalMagicDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalMagicDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalFireDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalFireDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalWaterDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalWaterDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalEarthDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalEarthDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalWindDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalWindDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalHolyDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalHolyDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalDarkDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalDarkDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalCriticalDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAllKindOfDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "IgnoreAbsorbAllKindOfDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "BasicAttackSpeedIncrease": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "NonBasicAttackSpeedIncrease": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SkillCooldownDurationDecreaseRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaHit": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaSkillHit": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaMeleeHit": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaRangedHit": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaMagicHit": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaSkillDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaAdditionalCriticalDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaCriticalDamageIncreaseRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaAdditionalBossDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaAdditionalBossDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaAdditionalMeleeDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaAdditionalMeleeOffensivePowerRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaAdditionalRangedDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaAdditionalRangedOffensivePowerRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaAdditionalMagicDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaAdditionalMagicOffensivePowerRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaWeaponDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaWeaponDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaAdditionalDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaPvpDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SomaAdditionalPvpDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "ExpeditionDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "ExpeditionNormalHitIncreaseRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "ExpeditionSkillHitIncreaseRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "ExpeditionAbsorbAllKindOfDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "ImmobilizeHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "ImmobilizeResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "DownHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "DownResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SleepHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SleepResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "FreezingHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "FreezingResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "DisengageHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "TauntResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "TauntHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "DisengageResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "CrowdControlDurationIncreaseAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "CrowdControlDurationDecreaseAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "DebuffDurationIncreaseAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "DebuffDurationDecreaseAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalStunDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalSilenceDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalImmobilizeDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalDownDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalDamagePeriodicDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalBlindDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalFreezingDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalBuildingDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "TotalNormalHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "TotalNormalDodgeRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "TotalSkillHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "TotalSkillDodgeRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "TotalAdditionalDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "TotalAbsorbDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalNonBossNpcDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalNonBossNpcDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "NonBossNpcHit": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "NonBossNpcDodge": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "KnockbackHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "KnockbackResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "PullHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "PullResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "HitImmobilizeHitRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "HitImmobilizeResistRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbPeriodicLossRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalPvpDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalPvpDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalPvpDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalPvpDamageRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "PvpHit": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "PvpDodge": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalNonBossNpcOffensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalBossOffensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalNonBossNpcDefensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalBossDefensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalNonBossNpcDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalBossDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalMeleeOffensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalRangedOffensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbAdditionalMagicOffensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalMeleeDefensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalRangedDefensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalMagicDefensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalHealTargetPowerRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AbsorbBlockDamageAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalMeleeTargetOffensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalRangedTargetOffensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalMagicTargetOffensivePower": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "GlancingBlowHit": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "GlancingBlowDamageRatio_pe2": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "InventoryWeightLimit": {
+            "type": "basic",
+            "value": "long_long",
+            "nullable": false
+        },
+        "AdditionalHealPowerAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalHealPowerRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SpecialMovePoints": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "MaxSpecialMovePoints": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "MaxTargetScanCount": {
+            "type": "basic",
+            "value": "short",
+            "nullable": false
+        },
+        "SkillManaPointsCostDecreaseRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalNpcRewardExperiencePointsRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalNpcRewardGoldRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalNpcRewardItemDropChanceAdjustRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalHealthPointsPotionRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalHealthPointsPotionAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalManaPointsPotionRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "AdditionalManaPointsPotionAmount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SpiritualBondPowerAdditionalNpcRewardExperiencePointsRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SpiritualBondPowerAdditionalNpcRewardGoldRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SpiritualBondPowerGainIncreaseRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SpiritualBondPowerConsumeDecreaseRatio_pe4": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        }
+    },
+    "FieldEnterCompleteResponse": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessageWithResultCode",
+            "nullable": false
+        },
+        "FieldInitializeInfo": {
+            "type": "struct",
+            "value": "FieldInitializeInfo",
+            "nullable": true
+        },
+        "ServerNavMeshCrcChecksum": {
+            "type": "basic",
+            "value": "unsigned_int",
+            "nullable": false
+        },
+        "ClientNavMeshCrcChecksum": {
+            "type": "basic",
+            "value": "unsigned_int",
+            "nullable": false
+        },
+        "EntitySpawnReason": [1, "B"],
+        "LastSourceWarpPointCuid": [1, "I"]
+    },
+    "FavorSummaryInfoQueryRequest": {
+    },
+    "ChatServerLoginRequest": {
+    },
+    "FavorSummaryInfoQueryResponse": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessageWithResultCode",
+            "nullable": false
+        },
+        "DailyAcceptableFavorRemainingCount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "FavorBossInfosByDistrictCuid": {
+            "type": "map",
+            "value": "<TMap<FTzCuid,TSharedPtr<FTzDistrictFavorBossInfo,(ESPMode)1>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FTzCuid,TSharedPtr<FTzDistrictFavorBossInfo,(ESPMode)1>,false>",
+            "nullable": false
+        }
+    },    
+    "ChatServerLoginResponse": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessageWithResultCode",
+            "nullable": false
+        },
+        "ChatServerIp": {
+            "type": "custom",
+            "value": "FString",
+            "nullable": false
+        },
+        "ChatServerPort": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "ChatServerAuthenticateKey": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        }
+    },
+    "TerritoryUpdateNotify": {
+        "TerritoryInfo": {
+            "type": "struct",
+            "value": "TerritoryInfo",
+            "nullable": true
+        }
+    },
+    "ItemAcquireNotify": {
+        "RealmCuid": [1, "I"],
+        "PlayerName": {
+            "type": "custom",
+            "value": "FString",
+            "nullable": false
+        },
+        "ItemAcquireSourceInfo": {
+            "type": "struct",
+            "value": "ItemAcquireSourceInfo",
+            "nullable": true
+        },
+        "ItemIndices": {
+            "type": "array",
+            "value": "<TArray<TSharedPtr<FTzItemIndex,(ESPMode)1>,TSizedDefaultAllocator<32>>,void>",
+            "nullable": false
+        }
+    }
+}

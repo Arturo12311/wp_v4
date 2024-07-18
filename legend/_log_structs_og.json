@@ -1,0 +1,548 @@
+{
+    "TlsLikeEncryptClientHello": {},
+    "TlsLikeEncryptServerHello": {
+        "ServerRandom": {
+            "type": "vector",
+            "value": "unsigned_char",
+            "nullable": false
+        },
+        "Exponent": {
+            "type": "vector",
+            "value": "unsigned_char",
+            "nullable": false
+        },
+        "Modulus": {
+            "type": "vector",
+            "value": "unsigned_char",
+            "nullable": false
+        }
+    },
+    "TlsLikeEncryptPremasterSecret": {
+        "PremasterSecret": {
+            "type": "vector",
+            "value": "unsigned_char",
+            "nullable": false
+        }
+    },
+    "TlsLikeEncryptServerCompleted": {},
+    "ProtocolCheckRequest": {
+        "Hash": {
+            "type": "string",
+            "value": "char",
+            "nullable": false
+        }
+    },
+    "ProtocolCheckResponse": {},
+    "InfoAuthenticate": {
+        "AuthenticateInfo": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        }
+    },
+    "InfoAuthenticateComplete": {
+        "Success": {
+            "type": "bool",
+            "value": null,
+            "nullable": false
+        },
+        "SessionKey": {
+            "type": "string",
+            "value": "char",
+            "nullable": false
+        },
+        "SessionInitializeInfo": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        },
+        "FailureReason": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "FailureReasonData": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        }
+    },
+    "TozPing": {
+        "Nonce": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "RecentlyProcessedTozMessageIndex": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        }
+    },
+    "TozPong": {
+        "Nonce": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "ServerUtcNow": {
+            "type": "custom",
+            "value": "TozSerializableMessageLibNative::DateTime",
+            "nullable": false
+        },
+        "RecentlyProcessedTozMessageIndex": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        }
+    },
+    "FieldEnterCompleteRequest": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "NavMeshCrcChecksum": {
+            "type": "basic",
+            "value": "unsigned_int",
+            "nullable": false
+        },
+        "CharacterMoveInfo": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        }
+    },
+    "PlayerInitializeInfoNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozInitializeMessage",
+            "nullable": false
+        },
+        "PlayerInitializeInfo": {
+            "type": "struct",
+            "value": "PlayerInitializeInfo",
+            "nullable": true
+        },
+        "CovenantInfo": {
+            "type": "struct",
+            "value": "CovenantInfo",
+            "nullable": true
+        },
+        "CovenantBattalionInfos": {
+            "type": "map",
+            "value": "<TMap<long_long,TSharedPtr<FTzCovenantBattalionNotifyInfo,(ESPMode)1>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<long_long,TSharedPtr<FTzCovenantBattalionNotifyInfo,(ESPMode)1>,false>",
+            "nullable": false
+        },
+        "FirstLoginAsPlayerDateTime": {
+            "type": "bool",
+            "value": null,
+            "nullable": false
+        },
+        "ReturningUserReturnedDateTime": {
+            "type": "bool",
+            "value": null,
+            "nullable": false
+        },
+        "ContentsActivationFlags": {
+            "type": "array",
+            "value": "<TArray<bool,TSizedDefaultAllocator<32>>,void>",
+            "nullable": false
+        }
+    },
+    "SpawnLayerAlreadyActivatedNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "IsPermanentSpawnLayer": {
+            "type": "bool",
+            "value": null,
+            "nullable": false
+        },
+        "SpawnLayerCuids": {
+            "type": "array",
+            "value": "<TArray<FTzCuid,TSizedDefaultAllocator<32>>,void>",
+            "nullable": false
+        }
+    },
+    "EnvironmentVariablesNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "Variables": {
+            "type": "map",
+            "value": "<TMap<FString,FString,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FString,FString,false>",
+            "nullable": false
+        }
+    },
+    "CovenantHistoryShowArrivalNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "CovenantHistoryInfos": {
+            "type": "map",
+            "value": "<TMap<ETzCovenantHistoryCategoryType,TArray<TSharedPtr<FTzCovenantHistoryInfo,(ESPMode)1>,TSizedDefaultAllocator<32>>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<ETzCovenantHistoryCategoryType,TArray<TSharedPtr<FTzCovenantHistoryInfo,(ESPMode)1>,TSizedDefaultAllocator<32>>,false>",
+            "nullable": false
+        }
+    },
+    "PlayerFieldEnterNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        }
+    },
+    "EntitySpawnNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "EntitySynchronizeMessage",
+            "nullable": false
+        },
+        "EntityInfo": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        },
+        "EntitySpawnReason": {
+            "type": "enum",
+            "value": null,
+            "nullable": false
+        }
+    },
+    "ConnectionStatusSynchronizeNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "EntitySynchronizeMessage",
+            "nullable": false
+        },
+        "PlayerGuid": {
+            "type": "basic",
+            "value": "long_long",
+            "nullable": false
+        },
+        "ConnectionStatus": {
+            "type": "enum",
+            "value": null,
+            "nullable": false
+        }
+    },
+    "MountInteractionStateNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "DriverGuid": {
+            "type": "basic",
+            "value": "long_long",
+            "nullable": false
+        },
+        "MountInteractionState": {
+            "type": "enum",
+            "value": null,
+            "nullable": false
+        },
+        "Info": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        }
+    },
+    "SpecialMovePointsSynchronizeNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "EntitySynchronizeMessage",
+            "nullable": false
+        },
+        "SpecialMovePoints": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "SpecialMovePointsDecreaseAmount_pmsec": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "ServerUtcNow": {
+            "type": "custom",
+            "value": "FDateTime",
+            "nullable": false
+        },
+        "DelayForOthersDuration_msec": {
+            "type": "basic",
+            "value": "float",
+            "nullable": false
+        }
+    },
+    "InstanceEventStartNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "EventCuid": {
+            "type": "custom",
+            "value": "Cuid",
+            "nullable": false
+        }
+    },
+    "EntityRemoveNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "EntitySynchronizeMessage",
+            "nullable": false
+        },
+        "EntityRemoveReason": {
+            "type": "enum",
+            "value": null,
+            "nullable": false
+        }
+    },
+    "SpawnLayerDeactivateNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "IsPermanentSpawnLayer": {
+            "type": "bool",
+            "value": null,
+            "nullable": false
+        },
+        "SpawnLayerCuid": {
+            "type": "custom",
+            "value": "Cuid",
+            "nullable": false
+        }
+    },
+    "CharacterMoveNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "CharacterGuid": {
+            "type": "basic",
+            "value": "long_long",
+            "nullable": false
+        },
+        "CharacterMoveInfo": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        }
+    },
+    "CharacterStateSynchronizeNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "EntitySynchronizeMessage",
+            "nullable": false
+        },
+        "CharacterState": {
+            "type": "enum",
+            "value": null,
+            "nullable": false
+        },
+        "StrongholdBattleResult": {
+            "type": "enum",
+            "value": null,
+            "nullable": false
+        },
+        "AffectSourceInfo": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        }
+    },
+    "MailUnreadNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "UnreadCounts": {
+            "type": "map",
+            "value": "<TMap<ETzMailTabType,int,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<ETzMailTabType,int,false>",
+            "nullable": false
+        }
+    },
+    "InstanceEventCompleteNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "EventCuid": {
+            "type": "custom",
+            "value": "Cuid",
+            "nullable": false
+        }
+    },
+    "ContentsUnlockInitializeNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "UnusedContentsUnlockKinds": {
+            "type": "map",
+            "value": "<TMap<ETzContentsUnlockKindType,bool,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<ETzContentsUnlockKindType,bool,false>",
+            "nullable": false
+        }
+    },
+    "CharacterPublicStatsInfoSynchronizeNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "EntitySynchronizeMessage",
+            "nullable": false
+        },
+        "CharacterPublicStatsInfo": {
+            "type": "message",
+            "value": null,
+            "nullable": false
+        }
+    },
+    "PlayerPrivateStatsInfoSynchronizeNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "PlayerPrivateStatsInfo": {
+            "type": "struct",
+            "value": "PlayerPrivateStatsInfo",
+            "nullable": true
+        }
+    },
+    "FieldEnterCompleteResponse": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessageWithResultCode",
+            "nullable": false
+        },
+        "FieldInitializeInfo": {
+            "type": "struct",
+            "value": "FieldInitializeInfo",
+            "nullable": true
+        },
+        "ServerNavMeshCrcChecksum": {
+            "type": "basic",
+            "value": "unsigned_int",
+            "nullable": false
+        },
+        "ClientNavMeshCrcChecksum": {
+            "type": "basic",
+            "value": "unsigned_int",
+            "nullable": false
+        },
+        "EntitySpawnReason": {
+            "type": "enum",
+            "value": null,
+            "nullable": false
+        },
+        "LastSourceWarpPointCuid": {
+            "type": "custom",
+            "value": "Cuid",
+            "nullable": false
+        }
+    },
+    "FavorSummaryInfoQueryRequest": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        }
+    },
+    "ChatServerLoginRequest": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        }
+    },
+    "FavorSummaryInfoQueryResponse": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessageWithResultCode",
+            "nullable": false
+        },
+        "DailyAcceptableFavorRemainingCount": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "FavorBossInfosByDistrictCuid": {
+            "type": "map",
+            "value": "<TMap<FTzCuid,TSharedPtr<FTzDistrictFavorBossInfo,(ESPMode)1>,FDefaultSetAllocator,TDefaultMapHashableKeyFuncs<FTzCuid,TSharedPtr<FTzDistrictFavorBossInfo,(ESPMode)1>,false>",
+            "nullable": false
+        }
+    },    
+    "ChatServerLoginResponse": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessageWithResultCode",
+            "nullable": false
+        },
+        "ChatServerIp": {
+            "type": "custom",
+            "value": "FString",
+            "nullable": false
+        },
+        "ChatServerPort": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        },
+        "ChatServerAuthenticateKey": {
+            "type": "basic",
+            "value": "int",
+            "nullable": false
+        }
+    },
+    "TerritoryUpdateNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "TerritoryInfo": {
+            "type": "struct",
+            "value": "TerritoryInfo",
+            "nullable": true
+        }
+    },
+    "ItemAcquireNotify": {
+        "Base": {
+            "type": "struct",
+            "value": "ErTozMessage",
+            "nullable": false
+        },
+        "RealmCuid": {
+            "type": "custom",
+            "value": "Cuid",
+            "nullable": false
+        },
+        "PlayerName": {
+            "type": "custom",
+            "value": "FString",
+            "nullable": false
+        },
+        "ItemAcquireSourceInfo": {
+            "type": "struct",
+            "value": "ItemAcquireSourceInfo",
+            "nullable": true
+        },
+        "ItemIndices": {
+            "type": "array",
+            "value": "<TArray<TSharedPtr<FTzItemIndex,(ESPMode)1>,TSizedDefaultAllocator<32>>,void>",
+            "nullable": false
+        }
+    }
+}

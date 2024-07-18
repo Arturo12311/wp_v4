@@ -9,44 +9,53 @@ def read_message(ba):
 
 def read_structure(ba, struct_name):
     structure = get_structure(struct_name)
+    print(struct_name)
     v, rb =  parse_fields(structure, ba)
     return structure, v, rb
 
-def read_array(ba, array_type):
-    ba, rb = split_bytearray(ba) 
-    format_string = get_format_string(ba, array_type)
+def read_array(ba, dt):
+    l = interpret_length_specifier(ba)
+    ba, rb = split_bytearray(ba[5:], l) 
+    format_string = get_format_string(dt, ba)
     v = list(struct.unpack(format_string, ba))
     return v, rb
 
 def read_string(ba):
-    ba, rb = split_bytearray(ba)
+    l = interpret_length_specifier(ba)
+    ba, rb = split_bytearray(ba[5:], l)
     v = ba.decode('utf-8')
     return v, rb
 
-def read_direct(ba):
-    v = get_format_string(ba[:1], 1)
-    rb = ba[1:]
+def parse(ba, t):
+    for x in t:
+        l = format_length(x)
+        ba, rb = split_bytearray(ba, l)
+        format_string = get_format_string(x)
+        v = struct.unpack(format_string, ba)[0]
     return v, rb
 
 def parse_fields(structure, ba):
     parsed_fields = {}
     rb = ba
-    for fieldname, type in structure.items():
-        parsed_field, rb = parse_field(rb, type)
+    for fieldname, dt in structure.items():
+        print(structure)
+        parsed_field, rb = parse_field(rb, dt)
         parsed_fields[fieldname] = parsed_field
     return parsed_fields, rb
 
-def parse_field(ba, type):
-    if type[0] == "message":
+def parse_field(ba, dt):
+    print(f"dt: {dt}, type: {type(dt)}")
+    print(list(ba))
+    if dt[0] == "message":
         _, _, v, rb = read_message(ba)
-    elif type[0] == "struct":
-        _, v, rb = read_structure(ba, type[1])
-    elif type[0] == "array":
-        v, rb = read_array(ba, type[1])
-    elif type[0] == "string":
+    elif dt[0] == "struct":
+        _, v, rb = read_structure(ba, dt[1])
+    elif dt[0] == "array":
+        v, rb = read_array(ba, dt[1])
+    elif dt[0] == "string":
         v, rb = read_string(ba)
-    elif isinstance(type[0], int):
-        v, rb = read_direct(ba)
+    elif isinstance(dt[0], list):
+        v, rb = read_direct(ba, dt[0])
     return v, rb
 
 
@@ -55,22 +64,29 @@ def convert_to_bytearray(string):
     ba = bytearray(int(x) for x in string.split(','))
     return ba
 
-def split_bytearray(ba): 
-    # for datatypes with lengthspecifier 
-    l = int.from_bytes(ba[1:5], byteorder='little')
-    ba = ba[5:]
+def split_bytearray(ba, l): 
     b = ba[:l]  
     rb = ba[l:] #remaining bytes
     return b, rb
 
-def get_format_string(ba, type):
-    repeat_count = len(ba) // abs(type)
-    if type > 0:  
-        format_char = {1: 'B', 2: 'H', 4: 'I', 8: 'Q'}[type] #signed
-    else:  
-        format_char = {1: 'b', 2: 'h', 4: 'i', 8: 'q'}[abs(type)] #unsigned
+def interpret_length_specifier(ba): 
+    return int.from_bytes(ba[1:5], byteorder='little')
+
+def get_format_string(format_char, ba=None):
+    repeat_count = get_repeat_count(dt, ba)
     return f'<{repeat_count}{format_char}'
 
+def format_length(fc):
+    formats = {
+        'B': 1, 'H': 2, 'I': 4, 'Q': 8, 'f': 4, 'd': 8,  # unsigned and floats
+        'b': -1, 'h': -2, 'i': -4, 'q': -8,  # signed}
+        'c': 1}  # char
+    return formats[fc]
+
+def get_repeat_count(dt, ba):
+    if ba is None: return 1
+    else: return len(ba) // abs(dt)
+        
 def get_msg_name(ba):
     f = import_file("_opdump.json")
     op = int.from_bytes(ba[1:5], byteorder='little') #opcode
@@ -79,7 +95,7 @@ def get_msg_name(ba):
     return msg_name, rb
 
 def get_structure(name):
-    f = import_file("_structures.json")
+    f = import_file("_claude_structs.json")
     structure = f[name]
     return structure
 

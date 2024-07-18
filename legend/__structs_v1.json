@@ -1,0 +1,54 @@
+{
+    "TlsLikeEncryptClientHello": {
+    "field0": ["array", ["I"]]
+    },
+    "TlsLikeEncryptServerHello": {
+        "ServerRandom": ["array", ["B"]],
+        "Exponent": ["array", ["B"]],
+        "Modulus": ["array", ["B"]]
+    },
+    "TlsLikeEncryptPremasterSecret": {
+        "PremasterSecret": ["array", ["B"]]
+    },
+    "TlsLikeEncryptServerCompleted": {},
+    "ProtocolCheckRequest": {
+        "Hash": ["string"]
+    },
+    "ProtocolCheckResponse": {},
+    "InfoAuthenticate": {
+        "AuthenticateInfo": ["message"]
+    },
+    "ErGameServerAuthenticateInfo": {
+        "Base": ["struct", "ErServerAuthenticateInfo"],
+        "AuthenticateKey": [["I"]]
+    },
+    "ErServerAuthenticateInfo": {
+        "Base": ["struct", "AuthenticateInfo"],
+        "LocalAreaNetworkAddress": ["string"]
+    },
+    "AuthenticateInfo": {},
+    "InfoAuthenticateComplete": {
+        "Success": [["B"]],
+        "SessionKey": ["string"],
+        "SessionInitializeInfo": ["message"],
+        "FailureReason": [["I"]],
+        "FailureReasonData": ["message"]
+    },
+    "ErGameServerSessionInitializeInfo": {
+        "Base": ["struct", "ErServerSessionInitializeInfo"],
+        "LocationInfo": ["struct", "LocationInfo"]
+    },
+    "ErServerSessionInitializeInfo": {
+        "UtcNow": [[1, "I"], [1, "Q"]]
+    },
+    "LocationInfo": {
+        "FieldUid": ["struct", "FieldUid"],
+        "Location_cm": [3, "f"],
+        "FacingDirection": [3, "f"]
+    },
+    "FieldUid": {
+        "RegionCuid": [1, "I"],
+        "InstanceFieldCuid": [1, "I"],
+        "InstanceFieldGuid": [1, "I"]
+    }
+}
