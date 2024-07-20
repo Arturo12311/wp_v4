@@ -296,7 +296,7 @@
     },
     "InventoryInfo": {
         "ItemInfos": [
-        "FTzItemInfo"
+        "msg"
         ],
         "MaxSlotCount": "i"
     },
@@ -2154,7 +2154,7 @@
         "MissionProgressCounts": [
         "q"
         ],
-        "AccomplishDateTime": "?",
+        "AccomplishDateTime": "IQ0",
         "IsRewarded": "?",
         "AnniversaryCuid": "I",
         "AnniversaryAchievementCycleBeginDateTime": "IQ",
@@ -2493,7 +2493,7 @@
         ]
         },
         "CampaignTicketInfos": {
-        "I": "FTzCampaignTicketInfo"
+        "I": "msg"
         }
     },
     "GuiseEquipResponse": {
@@ -2540,9 +2540,9 @@
     },
     "TerritoryBossSpawnInfo": {
         "SpawnerCuid": "I",
-        "SpawnDateTime": "?",
-        "ForceDespawnDateTime": "?",
-        "NextTrySpawnDateTime": "?"
+        "SpawnDateTime": "IQ0",
+        "ForceDespawnDateTime": "IQ0",
+        "NextTrySpawnDateTime": "IQ0"
     },
     "ShopCashMerchandiseReceiveResponse": {
         "ResultCode": "ETzResultCodeType",
@@ -2717,7 +2717,7 @@
     "MonsterBookInfo": {
         "CategoryCuidToNodeStateInfos": {
         "I": [
-            "FTzMonsterBookNodeStateInfo"
+            "msg"
         ]
         },
         "CategoryCuidToCollectionInfo": {
@@ -4978,7 +4978,7 @@
         "AcceptDateTime": "IQ",
         "StartByItem": "?",
         "QuestMissionProgressInfos": {
-        "Iq": "FTzQuestMissionProgressInfo"
+        "Iq": "FTzQuestMissionProgressInfo0"
         }
     },
     "LimitedCountingInfo": {
@@ -6560,7 +6560,7 @@
     },
     "PlayerSkillSlotSetInfo": {
         "PlayerSkillSlotInfos": {
-        "ETzPlayerSkillSlotIndexType": "FTzPlayerSkillSlotInfo"
+        "ETzPlayerSkillSlotIndexType": "FTzPlayerSkillSlotInfo0"
         }
     },
     "CombatOptionInfo": {
@@ -7468,8 +7468,8 @@
         "MountInteractionState": "ETzMountInteractionStateType",
         "CostumeInfo": "FTzCostumeInfo0",
         "InteractingDoodadGuid": "q",
-        "DyingExpireDateTime": "?",
-        "LastPlayerInteractionDateTime": "?",
+        "DyingExpireDateTime": "IQ0",
+        "LastPlayerInteractionDateTime": "IQ0",
         "ConnectionStatus": "ETzConnectionStatusType",
         "CovenantMemberRoleKind": "ETzCovenantMemberRoleKindType",
         "CovenantMemberRoleName": "s",
@@ -7729,8 +7729,8 @@
         "CovenantBattalionInfos": {
         "q": "FTzCovenantBattalionNotifyInfo"
         },
-        "FirstLoginAsPlayerDateTime": "?",
-        "ReturningUserReturnedDateTime": "?",
+        "FirstLoginAsPlayerDateTime": "IQ0",
+        "ReturningUserReturnedDateTime": "IQ0",
         "ContentsActivationFlags": [
         "?"
         ]
@@ -9098,7 +9098,7 @@
         "I"
         ],
         "PlayerSkillSlotSetInfos": {
-        "ETzStanceType": "FTzPlayerSkillSlotSetInfo"
+        "ETzStanceType": "FTzPlayerSkillSlotSetInfo0"
         },
         "PlayerSkillCooldownExpireDateTimeRangeInfos": {
         "I": "FTzDateTimeRangeInfo"
@@ -9919,8 +9919,8 @@
     },
     "HeroBossSpawnInfo": {
         "SpawnerCuid": "I",
-        "SpawnDateTime": "?",
-        "ForceDespawnDateTime": "?"
+        "SpawnDateTime": "IQ0",
+        "ForceDespawnDateTime": "IQ0"
     },
     "CheatTeleportToQuestMissionLocationResponse": {
         "ResultCode": "ETzResultCodeType"
@@ -10140,7 +10140,7 @@
         "Cuid": "I",
         "IsBound": "?",
         "IsStorable": "?",
-        "ExpireDateTime": "?",
+        "ExpireDateTime": "IQ0",
         "AcquiredDateTime": "IQ",
         "IsLocked": "?"
     },
@@ -10661,7 +10661,7 @@
         "IsDisplayModeAutoSelect": "?",
         "DisplayMode": "ETzNameTagHealthBarDisplayModeType",
         "DetailInfos": {
-        "ETzNameTagHealthBarDisplayModeType": "FTzNameTagHealthBarDisplayOptionDetailInfo"
+        "ETzNameTagHealthBarDisplayModeType": "FTzNameTagHealthBarDisplayOptionDetailInfo0"
         },
         "NpcHealthBarDisplayScope": "ETzNpcHealthBarDisplayScopeType",
         "IsAllNpcNamesDisplayed": "?",
@@ -12016,7 +12016,7 @@
         "GuiseCuid": "I",
         "MountItemCuid": "I",
         "GearSlotInfos": [
-        "FTzGearSlotInfo"
+        "FTzGearSlotInfo0"
         ]
     },
     "FollowerSquadResetResponse": {
@@ -12152,16 +12152,16 @@
         ],
         "BossSpawnInfos": {
         "I": [
-            "FTzBossSpawnInfo0"
+            "msg"
         ]
         },
         "OccupiableNpcBossSpawnInfos": {
         "I": [
-            "FTzOccupiableNpcBossSpawnInfo"
+            "FTzOccupiableNpcBossSpawnInfo0"
         ]
         },
         "OccupiableNpcInfos": [
-        "FTzOccupiableNpcInfo"
+        "FTzOccupiableNpcInfo0"
         ]
     },
     "CheatChangeStrongholdBuildingLevelResponse": {
@@ -12342,10 +12342,10 @@
     },
     "CombinedInventoryInfo": {
         "InventoryInfosByInventoryKind": {
-        "ETzUserInventoryKindType": "FTzInventoryInfo"
+        "ETzUserInventoryKindType": "FTzInventoryInfo0"
         },
         "RedrawableItemInventoryInfosByItemCategory": {
-        "ETzItemCategoryType": "FTzRedrawableItemInventoryInfo"
+        "ETzItemCategoryType": "FTzRedrawableItemInventoryInfo0"
         }
     },
     "CovenantLoseStrongholdNotify": {
@@ -14086,26 +14086,26 @@
         "PlayerStanceInfo": "FTzPlayerStanceInfo0",
         "CombinedInventoryInfo": "FTzCombinedInventoryInfo0",
         "SelectedEquipmentPresetIndex": "ETzEquipmentPresetIndexType",
-        "EquipmentPresetChangeCooldownExpirationDateTime": "?",
+        "EquipmentPresetChangeCooldownExpirationDateTime": "IQ0",
         "EquipmentPresetInfos": {
-        "ETzEquipmentPresetIndexType": "FTzEquipmentPresetInfo"
+        "ETzEquipmentPresetIndexType": "msg"
         },
         "QuickSlotInfos": {
-        "ETzQuickSlotIndexType": "FTzQuickSlotInfo"
+        "ETzQuickSlotIndexType": "FTzQuickSlotInfo0"
         },
         "QuickSlotPageInfos": {
-        "ETzStanceType": "FTzQuickSlotPageInfo"
+        "ETzStanceType": "FTzQuickSlotPageInfo0"
         },
         "OpenFogsByDistrictCuid": {
         "I": "Q"
         },
         "PlayerGameOptionInfo": "FTzPlayerGameOptionInfo0",
         "PushNotificationOptionInfos": {
-        "I": "FTzPushNotificationOptionInfo"
+        "I": "FTzPushNotificationOptionInfo0"
         },
         "PlayerSkillInfo": "FTzPlayerSkillInfo0",
         "FavoriteCraftRecipeInfos": [
-        "FTzFavoriteCraftRecipeInfo"
+        "FTzFavoriteCraftRecipeInfo0"
         ],
         "QuestsInfo": "FTzQuestsInfo0",
         "CompletedTutorialCuids": [
@@ -14114,7 +14114,7 @@
         "PartyInfo": "FTzPartyInfo0",
         "BattalionInfo": "msg",
         "InGameNotificationInfos": [
-        "FTzInGameNotificationInfo"
+        "FTzInGameNotificationInfo0"
         ],
         "AmityInfos": {
         "I": "q"
@@ -14142,15 +14142,15 @@
         "I": "FTzCollectionProgressInfo"
         },
         "BasicOrGrowthGuideAchievementInfos": [
-        "FTzBasicOrGrowthGuideAchievementInfo"
+        "msg"
         ],
         "AnniversaryAchievementInfos": {
         "I": [
-            "FTzAnniversaryAchievementInfo"
+            "msg"
         ]
         },
         "AnniversaryAchievementPointInfos": [
-        "FTzAnniversaryAchievementPointInfo"
+        "FTzAnniversaryAchievementPointInfo0"
         ],
         "DiscoveredSelfieDoodadSpawnerCuids": [
         "I"
@@ -14214,7 +14214,7 @@
         "I": "FTzSkillUseOptionInfo"
         },
         "RegionContentPlayInfos": {
-        "ETzRegionContentKindType": "FTzRegionContentPlayInfo"
+        "ETzRegionContentKindType": "FTzRegionContentPlayInfo0"
         },
         "MonsterBookInfo": "FTzMonsterBookInfo0",
         "TransmutationRecords": {
@@ -14226,7 +14226,7 @@
         },
         "PlayerRealmIntegrationBattleInfo": "FTzPlayerRealmIntegrationBattleInfo0",
         "PaidAttendanceInfos": [
-        "FTzPaidAttendanceInfo"
+        "FTzPaidAttendanceInfo0"
         ]
     },
     "CheatDiscoverAllSelfieDoodadSpawnersRequest": {},
@@ -15071,10 +15071,10 @@
         "I": "IQ"
         },
         "ActiveQuestProgressInfos": {
-        "Iq": "FTzQuestProgressInfo"
+        "Iq": "FTzQuestProgressInfo0"
         },
         "RepeatQuestCancelRecordInfos": {
-        "I": "FTzQuestCancelRecordInfo"
+        "I": "FTzQuestCancelRecordInfo0"
         },
         "ActiveFavorInfos": {
         "Iq": "FTzFavorInfo"

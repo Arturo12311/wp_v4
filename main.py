@@ -51,6 +51,7 @@ class Msg:
         # print(name)
         if name[-1] == "0":
             nb, rb = self.split_null(rb)
+            if nb not in [b'\x00', b'\x01']: exit()
             if self.is_null(nb): return None, rb
             struct = structs[name[:-1]]
         else:
@@ -79,6 +80,7 @@ class Msg:
     
     def pm(self, x, rb):
         nb, rb = self.split_null(rb)
+        if nb not in [b'\x00', b'\x01']: exit()
         if self.is_null(nb):
             # print("NULL")
             return None, rb
@@ -95,8 +97,9 @@ class Msg:
     
     def pa(self, x, rb):
         nb, rb = self.split_null(rb)
+        if nb not in [b'\x00', b'\x01']: exit()
         if self.is_null(nb):
-            # print("NULL")
+            print("NULL")
             return None, rb
         else:
             pa = []
@@ -114,15 +117,20 @@ class Msg:
             return v, rb
         elif x[-1] == "0":
             nb, rb = self.split_null(rb)
+            
             if self.is_null(nb):
+    
                 # print("NULL")
                 return None, rb
             else:
                 fs = f"<{x[:-1]}"
-        elif re.match(r"ETzAffectSourceSystemCastKindType|ETzResultCodeType|ETzCharacterStateType|ETzConnectionStatusType|ETzMountInteractionStateType|ETzContaminationNaturalDecreaseType|ETzBuildingAccessPermissionKindType", x):
+        elif re.match(r"ETzBuildingAccessPermissionKindType|ETzAffectSourceSystemCastKindType|ETzResultCodeType|ETzCharacterStateType|ETzConnectionStatusType|ETzMountInteractionStateType|ETzContaminationNaturalDecreaseType|ETzBuildingAccessPermissionKindType", x):
             fs = "<I"
         elif re.match("ETz.*", x):
             fs = "<B"
+        elif x == "?":
+            if rb[:1] not in [b'\x00', b'\x01']: exit()
+            fs = f"<{x}"
         else:
             fs = f"<{x}"
         size = struct.calcsize(fs)
@@ -132,9 +140,11 @@ class Msg:
     
     def ps(self, rb):
         nb, rb = self.split_null(rb)
+        if nb not in [b'\x00', b'\x01']: exit()
         if self.is_null(nb):
             # print("NULL")
             return None, rb
+        
         hb, rb = self.split_header(rb)
         l = self.read_header(hb)
         fs = f"{l}s"
@@ -163,9 +173,8 @@ def print_dict(name, dict):
 def main():
     output = {}
     for k, v in log.items():
-        # if k != "PlayerInitializeInfoNotify" and k != "PlayerPrivateStatsInfoSynchronizeNotify" or k == "FieldEnterCompleteResponse":
-        if k == "FieldEnterCompleteResponse" or k == "PlayerInitializeInfoNotify":
-            continue
+        # if k != "PlayerInitializeInfoNotify":
+        #     continue
 
 
         # read message
