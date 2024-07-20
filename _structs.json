@@ -827,8 +827,8 @@
         "ContaminationNaturalDecreaseInfos": {
         "ETzContaminationNaturalDecreaseType": "i"
         },
-        "CastVeilDateTime": "?",
-        "RemoveVeilDateTime": "?",
+        "CastVeilDateTime": "IQ0",
+        "RemoveVeilDateTime": "IQ0",
         "FullContamination": "i"
     },
     "NormalDoodadInfo": {
@@ -1482,12 +1482,12 @@
     },
     "BossSpawnInfo": {
         "SpawnerCuid": "I",
-        "SpawnDateTime": "?",
-        "ForceDespawnDateTime": "?"
+        "SpawnDateTime": "IQ0",
+        "ForceDespawnDateTime": "IQ0"
     },
     "PaidAttendanceInfo": {
         "PaidAttendanceCuid": "I",
-        "PaidDateTime": "?",
+        "PaidDateTime": "IQ0",
         "AttendanceCount": "i",
         "ReceivedAttendanceRewardCount": "i",
         "IsVisibleNotificationMarker": "?"
@@ -2021,7 +2021,7 @@
         "PlayerName": "s",
         "ItemAcquireSourceInfo": "FTzItemAcquireSourceInfo0",
         "ItemIndices": [
-        "FTzItemIndex"
+        "FTzItemIndex0"
         ]
     },
     "RedrawableItemConfirmRequest": {
@@ -4096,7 +4096,7 @@
         "CraftedItemValueAddedTaxRate_pe2": "i",
         "GatheringSiteEntranceFee": "i",
         "CovenantTradeTaxRate_pe2": "i",
-        "MarketTaxRate_pe2": "?"
+        "MarketTaxRate_pe2": "i0"
     },
     "MarketGoodsSummaryInfo": {
         "ItemCuid": "I",
@@ -5975,8 +5975,6 @@
         "UpdateTime": "IQ"
     },
     "PlayerPrivateStatsInfo": {
-        "HealthPoints": "q",
-        "MaxHealthPoints": "q",
         "ExperiencePoints": "q",
         "HealthPointsRegenerationOutOfCombatUnit": "q",
         "HealthPointsRegenerationInCombatUnit": "q",
@@ -7760,7 +7758,8 @@
         "RealmTransferKind": "ETzRealmTransferKindType"
     },
     "TerritoryErosionItemConfigurationInfo": {
-        "IsPermitted": "?"
+        "IsPermitted": "?",
+        "field1": "q"
     },
     "CovenantBanishMemberAtFrontNotify": {
         "PlayerGuid": "q"
@@ -9806,7 +9805,7 @@
     "RealmIntegrationBattleWarpReturnRequest": {},
     "CheatChangeTerritoryEntanglementGaugeRequest": {
         "TerritoryCuid": "I",
-        "EntanglementGauge": "i"
+        "EntanglementGauge": "i0"
     },
     "CovenantTextHistoryInfo": {
         "Guid": "q",
@@ -10119,7 +10118,7 @@
         "StrongholdBattleAttackPhase": "ETzStrongholdBattleAttackPhaseType",
         "HavenEventInfos": {
         "I": {
-            "I": "FTzHavenEventInfo"
+            "I": "msg"
         }
         }
     },
@@ -12146,14 +12145,14 @@
     },
     "FieldInitializeInfo": {
         "TerritoryInfos": [
-        "FTzTerritoryInfo"
+        "FTzTerritoryInfo0"
         ],
         "ZoneInfos": [
-        "FTzZoneInfo"
+        "FTzZoneInfo0"
         ],
         "BossSpawnInfos": {
         "I": [
-            "FTzBossSpawnInfo"
+            "FTzBossSpawnInfo0"
         ]
         },
         "OccupiableNpcBossSpawnInfos": {
@@ -13194,6 +13193,7 @@
         "ResultCode": "ETzResultCodeType"
     },
     "ItemIndex": {
+        "field0": "I",
         "ItemCuid": "I",
         "IsBound": "?",
         "IsStorable": "?",

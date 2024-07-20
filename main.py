@@ -48,20 +48,23 @@ class Msg:
         return struct.unpack("<I", hb)[0]
 
     def parse_struct(self, name, rb):
+        # print(name)
         if name[-1] == "0":
             nb, rb = self.split_null(rb)
             if self.is_null(nb): return None, rb
             struct = structs[name[:-1]]
         else:
             struct = structs[name]
-        print(struct)
         ps = {}
         for k, v in struct.items():
+            # print(k)
             pf, rb = self.parse(v, rb)
             ps[k] = pf
         return ps, rb
 
     def parse(self, x, rb):
+        # print(x)
+        # print(list(rb[:50]))
         if x == "msg":
             msg = Msg(rb); pf = msg.msg; rb = msg.rb
         elif isinstance(x, dict):
@@ -77,7 +80,7 @@ class Msg:
     def pm(self, x, rb):
         nb, rb = self.split_null(rb)
         if self.is_null(nb):
-            print("NULL")
+            # print("NULL")
             return None, rb
         else:
             pm = {}
@@ -93,7 +96,7 @@ class Msg:
     def pa(self, x, rb):
         nb, rb = self.split_null(rb)
         if self.is_null(nb):
-            print("NULL")
+            # print("NULL")
             return None, rb
         else:
             pa = []
@@ -109,7 +112,14 @@ class Msg:
         if x == "s":
             v, rb = self.ps(rb)
             return v, rb
-        elif re.match(r"ETzCharacterStateType|ETzConnectionStatusType|ETzMountInteractionStateType", x):
+        elif x[-1] == "0":
+            nb, rb = self.split_null(rb)
+            if self.is_null(nb):
+                # print("NULL")
+                return None, rb
+            else:
+                fs = f"<{x[:-1]}"
+        elif re.match(r"ETzAffectSourceSystemCastKindType|ETzResultCodeType|ETzCharacterStateType|ETzConnectionStatusType|ETzMountInteractionStateType|ETzContaminationNaturalDecreaseType|ETzBuildingAccessPermissionKindType", x):
             fs = "<I"
         elif re.match("ETz.*", x):
             fs = "<B"
@@ -123,7 +133,7 @@ class Msg:
     def ps(self, rb):
         nb, rb = self.split_null(rb)
         if self.is_null(nb):
-            print("NULL")
+            # print("NULL")
             return None, rb
         hb, rb = self.split_header(rb)
         l = self.read_header(hb)
@@ -131,7 +141,7 @@ class Msg:
         size = struct.calcsize(fs)
         v = struct.unpack(fs, rb[:size])
         if len(v) == 1: v = v[0]
-        return v.decode('utf-8'), rb[size:]
+        return v.decode('utf-8', errors='ignore'), rb[size:]
     
 
 
@@ -153,7 +163,8 @@ def print_dict(name, dict):
 def main():
     output = {}
     for k, v in log.items():
-        if k == "PlayerInitializeInfoNotify" or k == "PlayerPrivateStatsInfoSynchronizeNotify" or k == "FieldEnterCompleteResponse":
+        # if k != "PlayerInitializeInfoNotify" and k != "PlayerPrivateStatsInfoSynchronizeNotify" or k == "FieldEnterCompleteResponse":
+        if k == "FieldEnterCompleteResponse" or k == "PlayerInitializeInfoNotify":
             continue
 
 
@@ -184,6 +195,6 @@ def main():
 
             
     # Write all output to JSON file at once
-    with open('output.json', 'w') as f:
-        json.dump(output, f, indent=2)
+    # with open('output.json', 'w') as f:
+    #     json.dump(output, f, indent=2)
 main()
